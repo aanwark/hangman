@@ -81,17 +81,16 @@ def run(choosen_word, dash, dashes):
 			win()
 			break
 
-words = open_file()
-choosen_word = get_word(words)
-dash, dashes = get_dashes(choosen_word)
-print(dashes)
-run(choosen_word, dash, dashes)
-
-while start_again():
+def main(words):
 	choosen_word = get_word(words)
 	dash, dashes = get_dashes(choosen_word)
 	print(dashes)
 	run(choosen_word, dash, dashes)
-	start_again()
 
-print("Bye Bye!")
+words = open_file()
+main(words)
+
+while start_again():
+	main(words)
+
+print("\n Bye Bye! \n")
